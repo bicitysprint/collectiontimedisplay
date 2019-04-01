@@ -40,6 +40,16 @@ view: collection_time_display {
     sql: ${TABLE}."CIRCUIT" ;;
   }
 
+  dimension: citytrak_status {
+    type: string
+    sql: ${TABLE}."CITYTRAK_STATUS" ;;
+  }
+
+  dimension: col {
+    type: string
+    sql: ${TABLE}."COL" ;;
+  }
+
   dimension_group: collect_by {
     type: time
     timeframes: [
@@ -55,8 +65,19 @@ view: collection_time_display {
   }
 
   dimension: core_amount {
-    type: string
+    type: number
+    value_format_name: gbp_format
     sql: ${TABLE}."CORE_AMOUNT" ;;
+  }
+
+  dimension: cosmo_active_jobs {
+    type: string
+    sql: ${TABLE}."COSMO_ACTIVE_JOBS" ;;
+  }
+
+  dimension: cosmo_status {
+    type: string
+    sql: ${TABLE}."COSMO_STATUS" ;;
   }
 
   dimension: customer_attributes {
@@ -64,9 +85,19 @@ view: collection_time_display {
     sql: ${TABLE}."CUSTOMER_ATTRIBUTES" ;;
   }
 
+  dimension: customer_enabled {
+    type: string
+    sql: ${TABLE}."CUSTOMER_ENABLED" ;;
+  }
+
   dimension: customer_key {
     type: string
     sql: ${TABLE}."CUSTOMER_KEY" ;;
+  }
+
+  dimension: customer_name {
+    type: string
+    sql: ${TABLE}."CUSTOMER_NAME" ;;
   }
 
   dimension: customer_status_code {
@@ -77,6 +108,11 @@ view: collection_time_display {
   dimension: customer_status_desc {
     type: string
     sql: ${TABLE}."CUSTOMER_STATUS_DESC" ;;
+  }
+
+  dimension: del {
+    type: string
+    sql: ${TABLE}."DEL" ;;
   }
 
   dimension_group: deliver_by {
@@ -123,15 +159,50 @@ view: collection_time_display {
     sql: ${TABLE}."DRIVER_AMOUNT" ;;
   }
 
+  dimension: driver_circuit_code {
+    type: string
+    sql: ${TABLE}."DRIVER_CIRCUIT_CODE" ;;
+  }
+
+  dimension: driver_circuit_desc {
+    type: string
+    sql: ${TABLE}."DRIVER_CIRCUIT_DESC" ;;
+  }
+
+  dimension: driver_enabled {
+    type: string
+    sql: ${TABLE}."DRIVER_ENABLED" ;;
+  }
+
   dimension: driver_id {
     type: string
     sql: ${TABLE}."DRIVER_ID" ;;
+  }
+
+  dimension: driver_name {
+    type: string
+    sql: ${TABLE}."DRIVER_NAME" ;;
+  }
+
+  dimension: driver_postcode {
+    type: string
+    sql: ${TABLE}."DRIVER_POSTCODE" ;;
+  }
+
+  dimension: driver_status {
+    type: string
+    sql: ${TABLE}."DRIVER_STATUS" ;;
   }
 
   dimension: fuel_levy_amount {
     type: number
     value_format_name: gbp_format
     sql: ${TABLE}."FUEL_LEVY_AMOUNT" ;;
+  }
+
+  dimension: job_circuit_desc {
+    type: string
+    sql: ${TABLE}."JOB_CIRCUIT_DESC" ;;
   }
 
   dimension: job_codes {
@@ -159,6 +230,16 @@ view: collection_time_display {
     sql: ${TABLE}."JOB_STOP_COUNT" ;;
   }
 
+  dimension: key {
+    type: string
+    sql: ${TABLE}."KEY" ;;
+  }
+
+  dimension: mobile {
+    type: string
+    sql: ${TABLE}."MOBILE" ;;
+  }
+
   dimension: operator_email {
     type: string
     sql: ${TABLE}."OPERATOR_EMAIL" ;;
@@ -177,6 +258,11 @@ view: collection_time_display {
   dimension: operator_phone_2 {
     type: string
     sql: ${TABLE}."OPERATOR_PHONE_2" ;;
+  }
+
+  dimension: phone {
+    type: string
+    sql: ${TABLE}."PHONE" ;;
   }
 
   dimension_group: pickup {
@@ -211,6 +297,11 @@ view: collection_time_display {
   dimension: reference {
     type: string
     sql: ${TABLE}."REFERENCE" ;;
+  }
+
+  dimension: rego_number {
+    type: string
+    sql: ${TABLE}."REGO_NUMBER" ;;
   }
 
   dimension: service_code {
@@ -251,6 +342,21 @@ view: collection_time_display {
     sql: ${TABLE}."VAT_AMOUNT" ;;
   }
 
+  dimension: vehicle_code {
+    type: string
+    sql: ${TABLE}."VEHICLE_CODE" ;;
+  }
+
+  dimension: vehicle_colour {
+    type: string
+    sql: ${TABLE}."VEHICLE_COLOUR" ;;
+  }
+
+  dimension: vehicle_make {
+    type: string
+    sql: ${TABLE}."VEHICLE_MAKE" ;;
+  }
+
   dimension: vehicle_type {
     type: string
     sql: ${TABLE}."VEHICLE_TYPE" ;;
@@ -270,7 +376,6 @@ view: collection_time_display {
   set:drilldown {
 
     fields: [job_number, booking_time, pickup_time, collect_by_time, deliver_by_time,deliver_time, driver_id, job_status_desc, status]
-
 
   }
 
