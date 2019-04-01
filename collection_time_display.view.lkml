@@ -263,6 +263,16 @@ view: collection_time_display {
 
   measure: count {
     type: count
-    drill_fields: [operator_name]
+    drill_fields: [drilldown*]
   }
+
+
+  set:drilldown {
+
+    fields: [job_number, booking_raw, pickup_raw, collect_by_raw, deliver_by_raw, driver_id, job_status_desc, status]
+
+
+  }
+
+
 }
