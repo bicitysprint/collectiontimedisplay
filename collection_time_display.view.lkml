@@ -118,7 +118,8 @@ view: collection_time_display {
   }
 
   dimension: driver_amount {
-    type: string
+    type: number
+    value_format_name: gbp_format
     sql: ${TABLE}."DRIVER_AMOUNT" ;;
   }
 
@@ -128,7 +129,8 @@ view: collection_time_display {
   }
 
   dimension: fuel_levy_amount {
-    type: string
+    type: number
+    value_format_name: gbp_format
     sql: ${TABLE}."FUEL_LEVY_AMOUNT" ;;
   }
 
@@ -232,17 +234,20 @@ view: collection_time_display {
   }
 
   dimension: total_exc_amount {
-    type: string
+    type: number
+    value_format_name: gbp_format
     sql: ${TABLE}."TOTAL_EXC_AMOUNT" ;;
   }
 
   dimension: total_inc_amount {
-    type: string
+    type: number
+    value_format_name: gbp_format
     sql: ${TABLE}."TOTAL_INC_AMOUNT" ;;
   }
 
   dimension: vat_amount {
-    type: string
+    type: number
+    value_format_name: gbp_format
     sql: ${TABLE}."VAT_AMOUNT" ;;
   }
 
