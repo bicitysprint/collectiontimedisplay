@@ -269,7 +269,7 @@ view: collection_time_display {
 
   set:drilldown {
 
-    fields: [job_number, booking_raw, pickup_raw, collect_by_raw, deliver_by_raw, driver_id, job_status_desc, status]
+    fields: [job_number, booking_time, pickup_time, collect_by_time, deliver_by_time,deliver_time, driver_id, job_status_desc, status]
 
 
   }
