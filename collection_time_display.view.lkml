@@ -15,6 +15,28 @@ view: collection_time_display {
     sql: ${TABLE}."BOOKING_DATE" ;;
   }
 
+
+
+  dimension: booking_d {
+    type: date_time
+    sql: ${TABLE}."BOOKING_DATE" ;;
+  }
+
+  dimension: pick_d {
+    type: date_time
+    sql: ${TABLE}."PICKUP_DATE" ;;
+  }
+
+
+dimension: bookingvscollection {
+
+  type: number
+  sql: datediff(${booking_d},${pick_d}) ;;
+
+}
+
+
+
   dimension: caller {
     type: string
     sql: ${TABLE}."CALLER" ;;
