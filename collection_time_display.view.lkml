@@ -90,6 +90,7 @@ dimension: bookingvscollectioncategory {
   when ${bookingvscollection} = -43 then '43 min early'
   when ${bookingvscollection} = -44 then '44 min early'
   when ${bookingvscollection} = -45 then '45 min early'
+  when ${bookingvscollection} <-45 then '46+ min early'
   when ${bookingvscollection} = 1 then '1 min late'
   when ${bookingvscollection} = 2 then '2 min late'
   when ${bookingvscollection} = 3 then '3 min late'
@@ -135,6 +136,7 @@ dimension: bookingvscollectioncategory {
   when ${bookingvscollection} = 43 then '43 min late'
   when ${bookingvscollection} = 44 then '44 min late'
   when ${bookingvscollection} = 45 then '45 min late'
+  when ${bookingvscollection} >45 then '46+ min late'
   else 'other' end
   ;;
 
