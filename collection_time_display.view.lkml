@@ -30,7 +30,7 @@ view: collection_time_display {
 
 dimension: bookingvscollection {
 
-  type: string
+  type: number
   sql: datediff(minute,${booking_d},${pick_d}) ;;
 
 }
