@@ -43,7 +43,7 @@ dimension: bookingvscollectioncategory {
   sql:
 
   case
-  when ${bookingvscollection} is null then 'not picked up'
+  when ${bookingvscollection} is null then 'not allocated'
   when ${bookingvscollection} = 0 then 'on time'
   when ${bookingvscollection} = -1 then '1 min early'
   when ${bookingvscollection} = -2 then '2 min early'
