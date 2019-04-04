@@ -16,4 +16,29 @@ named_value_format: gbp_format {
 #persist_with: collection_time_display_default_datagroup
 
 
-explore :collection_time_display {}
+explore :collection_time_display {
+fields: [ALL_FIELDS*,-service_derived_tbl.code, -vehicle_derived_tbl.vehicle_code]
+
+  join: service_derived_tbl {
+
+    type: left_outer
+    sql_on: ${collection_time_display.service_code}=${service_derived_tbl.code} ;;
+    relationship: one_to_one
+
+  }
+
+
+  join: vehicle_derived_tbl {
+
+    type: left_outer
+    sql_on: ${collection_time_display.vehicle_code}=${vehicle_derived_tbl.vehicle_code} ;;
+    relationship: one_to_one
+
+  }
+
+
+
+
+
+
+}
