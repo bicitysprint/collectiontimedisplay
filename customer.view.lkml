@@ -142,6 +142,7 @@ view: customer {
   }
 
   dimension: cust_key {
+    primary_key: yes
     type: string
     sql: ${TABLE}."CUST_KEY" ;;
   }
