@@ -557,6 +557,7 @@ dimension: bookingvscollectioncategory {
 
 
 measure: avgofbookingvscollectionmin {
+  label: "Avg_Bookings_vs_Collection_Minutes"
 
   type: average
   sql: ${bookingvscollection} ;;
