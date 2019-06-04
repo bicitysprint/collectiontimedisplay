@@ -523,6 +523,13 @@ dimension: bookingvscollectioncategory {
     sql: ${TABLE}."VEHICLE_CODE" ;;
   }
 
+
+  dimension: job_circuit_code {
+    type: string
+    sql: ${TABLE}."JOB_CIRCUIT_CODE" ;;
+  }
+
+
   dimension: vehicle_colour {
     type: string
     sql: ${TABLE}."VEHICLE_COLOUR" ;;

@@ -40,7 +40,7 @@ fields: [ALL_FIELDS*,-service_derived_tbl.code, -vehicle_derived_tbl.vehicle_cod
 
   join: radfreq {
     type: left_outer
-    sql_on: ${collection_time_display.job_circuit_desc}=${radfreq.radio_freq_code} ;;
+    sql_on: ${collection_time_display.job_circuit_code}=${radfreq.radio_freq_code} ;;
     relationship: many_to_one
 
   }
