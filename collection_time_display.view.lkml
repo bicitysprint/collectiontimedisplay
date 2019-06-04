@@ -569,7 +569,7 @@ measure: avgofbookingvscollectionmin {
 
   set:drilldown {
 
-    fields: [job_number, booking_time, pickup_time, collect_by_time, deliver_by_time,deliver_time, driver_id, job_status_desc, status, ut_returnjourneysfreq.sc]
+    fields: [job_number,booking_time, pickup_time,bookingvscollection, collect_by_time, deliver_by_time,deliver_time, driver_id, job_status_desc, status, ut_returnjourneysfreq.sc]
 
   }
 
