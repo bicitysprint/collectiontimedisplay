@@ -38,6 +38,22 @@ fields: [ALL_FIELDS*,-service_derived_tbl.code, -vehicle_derived_tbl.vehicle_cod
 
 
 
+  join: radfreq {
+    type: left_outer
+    sql_on: ${collection_time_display.job_circuit_desc}=${radfreq.radio_freq_code} ;;
+    relationship: many_to_one
+
+  }
+
+
+join: ut_returnjourneysfreq {
+  type: left_outer
+  sql_on: ${radfreq.frequency_desc}=${ut_returnjourneysfreq.frequency_desc} ;;
+  relationship: one_to_one
+
+
+}
+
 
 
 
