@@ -153,16 +153,12 @@ dimension: bookingvscollectioncategory {
       case
       when ${bookingvscollection} is null then 'not allocated/not pickedup'
       when ${bookingvscollection} = 0 then 'on time'
-      when ${bookingvscollection} >= 1    and ${bookingvscollection} <= 15   then '<=15 min late'
-      when ${bookingvscollection} <= -1   and ${bookingvscollection} >= -15  then '<=15 min early'
-      when ${bookingvscollection} >= 15   and ${bookingvscollection} <= 30   then '15-30 min late'
-      when ${bookingvscollection} <= -15  and ${bookingvscollection} >= -30  then '15-30 min early'
-      when ${bookingvscollection} >= 30   and ${bookingvscollection} <= 45   then '30-45 min late'
-      when ${bookingvscollection} <= -30  and ${bookingvscollection} >= -45  then '30-45 min early'
-      when ${bookingvscollection} >= 45   and ${bookingvscollection} <= 60   then '45-60 min late'
-      when ${bookingvscollection} <= -45  and ${bookingvscollection} >= -60  then '45-60 min early'
-      when ${bookingvscollection} > 60 then '60+ min late'
-      when ${bookingvscollection} < -60 then '60+ min early'
+      when ${bookingvscollection} >= 1    and ${bookingvscollection} <= 30   then '30 min or less are late'
+      when ${bookingvscollection} <= -1   and ${bookingvscollection} >= -30  then '30 min or less are early'
+      when ${bookingvscollection} >= 1    and ${bookingvscollection} <= 60   then '60 min or less are late'
+      when ${bookingvscollection} <= -1   and ${bookingvscollection} >= -60  then '60 min or less are early'
+      when ${bookingvscollection} > 60 then '60 min plus are late'
+      when ${bookingvscollection} < -60 then '60 min plus are early'
 
 
       --when ${bookingvscollection} >= 60   and ${bookingvscollection} <= 75   then '60-75 min late'
