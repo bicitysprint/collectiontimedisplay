@@ -150,8 +150,8 @@ dimension: bookingvscollectioncategory {
     type:  string
     sql:
 
-      case
-      when ${bookingvscollection} is null then 'not allocated/not pickedup'
+        case
+      when ${bookingvscollection} is null then 'not allocated/not picked-up'
       when ${bookingvscollection} = 0 then 'on time'
       when ${bookingvscollection} >= 1    and ${bookingvscollection} <= 30   then '30 min or less are late'
       when ${bookingvscollection} <= -1   and ${bookingvscollection} >= -30  then '30 min or less are early'
@@ -159,6 +159,9 @@ dimension: bookingvscollectioncategory {
       when ${bookingvscollection} <= -1   and ${bookingvscollection} >= -60  then '60 min or less are early'
       when ${bookingvscollection} > 60 then '60 min plus are late'
       when ${bookingvscollection} < -60 then '60 min plus are early'
+
+
+
 
 
       --when ${bookingvscollection} >= 60   and ${bookingvscollection} <= 75   then '60-75 min late'
@@ -574,8 +577,17 @@ measure: avgofbookingvscollectionmin {
   sql: ${bookingvscollection} ;;
   drill_fields: [drilldown*]
 
+}
+
+
+measure: avg_collection_minutes {
+  type: number
+  sql: round(${avgofbookingvscollectionmin},1) ;;
+  value_format: "#,##0"
+  drill_fields: [drilldown*]
 
 }
+
 
 
 
