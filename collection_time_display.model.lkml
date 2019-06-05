@@ -51,9 +51,14 @@ join: ut_returnjourneysfreq {
   sql_on: ${radfreq.frequency_desc}=${ut_returnjourneysfreq.frequency_desc} ;;
   relationship: one_to_one
 
-
 }
 
+join: postcodelatlng {
+  type: left_outer
+  sql_on: ${collection_time_display.col} = ${postcodelatlng.postcode} ;;
+  relationship: many_to_one
+
+}
 
 
 
