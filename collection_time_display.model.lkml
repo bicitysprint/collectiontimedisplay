@@ -17,6 +17,7 @@ named_value_format: gbp_format {
 
 
 explore :collection_time_display {
+persist_for: "10 minute"
 fields: [ALL_FIELDS*,-service_derived_tbl.code, -vehicle_derived_tbl.vehicle_code]
 
   join: service_derived_tbl {
