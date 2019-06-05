@@ -230,6 +230,17 @@ dimension: bookingvscollectioncategory {
     sql: ${TABLE}."COL" ;;
   }
 
+
+  dimension: collection_zone {
+    map_layer_name: uk_postcode_areas
+    sql: CASE WHEN SUBSTRING(${col}, 2, 1) IN ('0','1','2','3','4','5','6','7','8','9')
+         THEN UPPER(LEFT(${col}, 1))
+         ELSE UPPER(LEFT(${col}, 2)) END ;;
+  }
+
+
+
+
   dimension_group: collect_by {
     type: time
     timeframes: [
