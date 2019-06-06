@@ -238,6 +238,12 @@ dimension: bookingvscollectioncategory {
   }
 
 
+dimension: coll_zone {
+  type: string
+  sql: rtrim(ltrim(LEFT(${col}, CASE WHEN charindex(' ', ${col}) = 0 THEN length(${col}) ELSE charindex(' ', ${col}) - 1 END))) ;;
+}
+
+
 
 
   dimension_group: collect_by {
