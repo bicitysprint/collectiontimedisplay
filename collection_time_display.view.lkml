@@ -599,7 +599,7 @@ measure: avg_collection_minutes {
 
   set:drilldown {
 
-    fields: [job_number,booking_time, pickup_time,bookingvscollection, driver_id, job_status_desc, status, service_code, service.description, service.vanandbike, ut_returnjourneysfreq.sc, col, coll_zone, london_zones.zone]
+    fields: [job_number,booking_time, pickup_time,bookingvscollection, driver_id, job_status_desc, status, service_code, service_derived_tbl.description, service_derived_tbl.vanandbike, ut_returnjourneysfreq.sc, col, coll_zone, london_zones.zone]
 
   }
 
