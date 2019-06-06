@@ -599,7 +599,7 @@ measure: avg_collection_minutes {
 
   set:drilldown {
 
-    fields: [job_number,booking_time, pickup_time,bookingvscollection, driver_id, job_status_desc, status, ut_returnjourneysfreq.sc]
+    fields: [job_number,booking_time, pickup_time,bookingvscollection, driver_id, job_status_desc, status, ut_returnjourneysfreq.sc, col, coll_zone, london_zones.zone]
 
   }
 

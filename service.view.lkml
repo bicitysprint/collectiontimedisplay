@@ -27,6 +27,13 @@ where archive = (select max(archive) from cc.service)
     sql: ${TABLE}."CODE" ;;
   }
 
+  dimension: vanandbike {
+    type: string
+    sql: case when ${description} like '%bike%' then 'Bike' else 'Van' end ;;
+
+
+  }
+
 
 
 }
