@@ -245,7 +245,6 @@ dimension: coll_zone {
 
 
 
-
   dimension_group: collect_by {
     type: time
     timeframes: [

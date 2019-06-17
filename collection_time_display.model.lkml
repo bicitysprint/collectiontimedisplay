@@ -75,6 +75,8 @@ join: london_zones {
   type: left_outer
   sql_on: ${collection_time_display.coll_zone} = ${london_zones.postcode_zone} ;;
   relationship: many_to_one
+
+
 }
 
 
