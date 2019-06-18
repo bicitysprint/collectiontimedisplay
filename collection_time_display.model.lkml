@@ -29,6 +29,8 @@ persist_with: collection_times
 
 explore :collection_time_display {
 fields: [ALL_FIELDS*,-service_derived_tbl.code, -vehicle_derived_tbl.vehicle_code]
+sql_always_where: ${ut_returnjourneysfreq.sc} <> 'Exclude' ;;
+
 
   join: service_derived_tbl {
 
@@ -61,7 +63,6 @@ join: ut_returnjourneysfreq {
   type: left_outer
   sql_on: ${radfreq.frequency_desc}=${ut_returnjourneysfreq.frequency_desc} ;;
   relationship: one_to_one
-
 }
 
 join: postcodelatlng {
