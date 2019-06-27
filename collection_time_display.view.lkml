@@ -569,6 +569,46 @@ dimension: coll_zone {
     sql: ${TABLE}."VERSION" ;;
   }
 
+
+  dimension: picked_up_in_the_past_15_min {
+    type: string
+    sql:
+    case when date_trunc('minute',to_time(pickup_date)) between dateadd(minutes,-15,date_trunc('minute',current_time())) and date_trunc('minute',current_time()) then 'yes' else 'no' end  ;;
+  }
+
+  dimension: picked_up_in_the_past_25_min {
+    type: string
+    sql:
+    case when date_trunc('minute',to_time(pickup_date)) between dateadd(minutes,-25,date_trunc('minute',current_time())) and date_trunc('minute',current_time()) then 'yes' else 'no' end  ;;
+  }
+
+  dimension: picked_up_in_the_past_35_min {
+    type: string
+    sql:
+    case when date_trunc('minute',to_time(pickup_date)) between dateadd(minutes,-35,date_trunc('minute',current_time())) and date_trunc('minute',current_time()) then 'yes' else 'no' end  ;;
+  }
+
+  dimension: picked_up_in_the_past_45_min {
+    type: string
+    sql:
+    case when date_trunc('minute',to_time(pickup_date)) between dateadd(minutes,-45,date_trunc('minute',current_time())) and date_trunc('minute',current_time()) then 'yes' else 'no' end  ;;
+  }
+
+  dimension: picked_up_in_the_past_60_min {
+    type: string
+    sql:
+    case when date_trunc('minute',to_time(pickup_date)) between dateadd(minutes,-60,date_trunc('minute',current_time())) and date_trunc('minute',current_time()) then 'yes' else 'no' end  ;;
+  }
+
+
+  dimension: picked_up_in_the_past_120_min {
+    type: string
+    sql:
+    case when date_trunc('minute',to_time(pickup_date)) between dateadd(minutes,-120,date_trunc('minute',current_time())) and date_trunc('minute',current_time()) then 'yes' else 'no' end  ;;
+  }
+
+
+
   measure: count {
     type: count
     drill_fields: [drilldown*]
