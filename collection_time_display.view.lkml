@@ -621,6 +621,7 @@ measure: avgofbookingvscollectionmin {
   type: average
   sql: ${bookingvscollection} ;;
   drill_fields: [drilldown*]
+  #html: <p style="color: red; font-size: 30px"> {{ value }} </p> ;;
 
 }
 
@@ -630,6 +631,7 @@ measure: avg_collection_minutes {
   sql: round(${avgofbookingvscollectionmin},1) ;;
   value_format: "#,##0"
   drill_fields: [drilldown*]
+  #html: <p style="color: red; font-size: 10px"> {{ value }} </p> ;;
 
 }
 
