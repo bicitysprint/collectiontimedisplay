@@ -29,7 +29,7 @@ persist_with: collection_times
 
 explore :collection_time_display {
 fields: [ALL_FIELDS*,-service_derived_tbl.code, -vehicle_derived_tbl.vehicle_code]
-sql_always_where: ${ut_returnjourneysfreq.sc} <> 'Exclude' ;;
+sql_always_where: ifnull(${ut_returnjourneysfreq.sc},'NOSC') <> 'Exclude' ;;
 group_label: "Webdesbatch"
 
 
