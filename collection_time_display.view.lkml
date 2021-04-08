@@ -6,6 +6,7 @@ view: collection_time_display {
     timeframes: [
       raw,
       time,
+      time_of_day,
       date,
       week,
       month,
