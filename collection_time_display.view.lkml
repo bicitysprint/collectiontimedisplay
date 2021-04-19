@@ -251,6 +251,7 @@ dimension: coll_zone {
     timeframes: [
       raw,
       time,
+      time_of_day,
       date,
       week,
       month,
@@ -316,6 +317,7 @@ dimension: coll_zone {
     timeframes: [
       raw,
       time,
+      time_of_day,
       date,
       week,
       month,
@@ -330,6 +332,7 @@ dimension: coll_zone {
     timeframes: [
       raw,
       time,
+      time_of_day,
       date,
       week,
       month,
@@ -466,6 +469,7 @@ dimension: coll_zone {
     timeframes: [
       raw,
       time,
+      time_of_day,
       date,
       week,
       month,
